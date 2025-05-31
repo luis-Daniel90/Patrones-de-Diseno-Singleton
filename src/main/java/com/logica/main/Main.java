@@ -34,13 +34,15 @@ public final class Main {
 
         // Obtener la instancia única de la sesión
         SesionUsuario sesion = SesionUsuario.getInstancia();
+        SesionUsuario sesion2 = SesionUsuario.getInstancia();
 
         // Iniciar sesión
         sesion.iniciarSesion(usuario1);
 
         // Mostrar datos del usuario
         if (sesion.haySesionActiva()) {
-            System.out.println("Usuario en sesión: " + sesion.getUsuario());
+            System.out.println("Usuario en sesión: " + sesion2.getUsuario());//Aqui se valida que la sesion2 contiene los mismos datos que la sesion1
+                                                                            //apesar de que a sesion2 nunca se le pasaron los datos de usuario1
         }
 
         // Cerrar sesión
